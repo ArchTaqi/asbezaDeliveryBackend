@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pricing{% endblock %}
+
+{% block body %}
+    <h1>Pricing</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pricing.id }}</td>
+            </tr>
+            <tr>
+                <th>ItemCode</th>
+                <td>{{ pricing.itemCode }}</td>
+            </tr>
+            <tr>
+                <th>InPrice</th>
+                <td>{{ pricing.inPrice }}</td>
+            </tr>
+            <tr>
+                <th>FixPrice</th>
+                <td>{{ pricing.fixPrice }}</td>
+            </tr>
+            <tr>
+                <th>InQuantity</th>
+                <td>{{ pricing.inQuantity }}</td>
+            </tr>
+            <tr>
+                <th>RemainingQuantity</th>
+                <td>{{ pricing.remainingQuantity }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ pricing.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pricing_index') }}">back to list</a>
+
+    <a href="{{ path('pricing_edit', {'id': pricing.id}) }}">edit</a>
+
+    {{ include('pricing/_delete_form.html.twig') }}
+{% endblock %}

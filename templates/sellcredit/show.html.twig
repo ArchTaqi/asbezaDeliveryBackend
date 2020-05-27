@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sellcredit{% endblock %}
+
+{% block body %}
+    <h1>Sellcredit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sellcredit.id }}</td>
+            </tr>
+            <tr>
+                <th>TotalAmount</th>
+                <td>{{ sellcredit.totalAmount }}</td>
+            </tr>
+            <tr>
+                <th>PaidAmount</th>
+                <td>{{ sellcredit.paidAmount }}</td>
+            </tr>
+            <tr>
+                <th>RemainingAmount</th>
+                <td>{{ sellcredit.remainingAmount }}</td>
+            </tr>
+            <tr>
+                <th>CustomerName</th>
+                <td>{{ sellcredit.customerName }}</td>
+            </tr>
+            <tr>
+                <th>CustomerPhone</th>
+                <td>{{ sellcredit.customerPhone }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ sellcredit.date }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sellcredit_index') }}">back to list</a>
+
+    <a href="{{ path('sellcredit_edit', {'id': sellcredit.id}) }}">edit</a>
+
+    {{ include('sellcredit/_delete_form.html.twig') }}
+{% endblock %}

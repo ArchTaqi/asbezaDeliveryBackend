@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paymentstatus index{% endblock %}
+
+{% block body %}
+    <h1>Paymentstatus index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Descriiption</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for paymentstatus in paymentstatuses %}
+            <tr>
+                <td>{{ paymentstatus.id }}</td>
+                <td>{{ paymentstatus.name }}</td>
+                <td>{{ paymentstatus.descriiption }}</td>
+                <td>
+                    <a href="{{ path('paymentstatus_show', {'id': paymentstatus.id}) }}">show</a>
+                    <a href="{{ path('paymentstatus_edit', {'id': paymentstatus.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('paymentstatus_new') }}">Create new</a>
+{% endblock %}

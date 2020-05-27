@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Itemcredit{% endblock %}
+
+{% block body %}
+    <h1>Create new Itemcredit</h1>
+
+    {{ include('itemcredit/_form.html.twig') }}
+
+    <a href="{{ path('itemcredit_index') }}">back to list</a>
+{% endblock %}

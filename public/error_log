@@ -1,0 +1,25 @@
+[13-May-2020 13:52:21 UTC] PHP Fatal error:  Cannot redeclare App\Controller\UserController::createUser() in /home/appdevtcom/public_html/asbeza/src/Controller/UserController.php on line 359
+[16-May-2020 12:01:22 UTC] An exception occurred while executing 'INSERT INTO Category (name, description, catCode, regDate, regEtDate, picturePath, branch, status, registeredBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' with params ["New Category", "described", "5441", "2020-05-16", "08\/09\/2012", null, "1", "1", "1"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'New Category-1' for key 'name'
+[16-May-2020 22:47:38 UTC] Notice: Undefined variable: fileName
+[17-May-2020 09:43:44 UTC] An exception occurred while executing 'INSERT INTO Category (name, description, catCode, regDate, regEtDate, picturePath, branch, status, registeredBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' with params ["catwithpic", "picture", "8013", "2020-05-17", "09\/09\/2012", "6b62fd7f94a1914b2dd98a5fcf897280.png", "1", "1", null]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'registeredBy' cannot be null
+[17-May-2020 09:48:42 UTC] An exception occurred while executing 'INSERT INTO Category (name, description, catCode, regDate, regEtDate, picturePath, branch, status, registeredBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' with params ["Cat with pic", "pics", "8256", "2020-05-17", "09\/09\/2012", "", "1", "1", null]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'registeredBy' cannot be null
+[17-May-2020 09:53:47 UTC] An exception occurred while executing 'INSERT INTO Category (name, description, catCode, regDate, regEtDate, picturePath, branch, status, registeredBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' with params ["Cat with pic", "pics", "8886", "2020-05-17", "09\/09\/2012", "http:\/\/asbeza.appdevt.com\/public\/uploads\/categories\/0365c3ac153ec7d8c3fc436eb88ca9f7.png", "1", "1", "1"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Cat with pic-1' for key 'name'
+[17-May-2020 14:41:20 UTC] Warning: file_put_contents(/home/appdevtcom/public_html/asbeza/public/uploads/categories): failed to open stream: Is a directory
+[17-May-2020 14:52:43 UTC] Notice: Undefined offset: 1
+[17-May-2020 14:55:05 UTC] Notice: Undefined offset: 1
+[17-May-2020 14:55:32 UTC] Warning: base64_decode() expects parameter 1 to be string, array given
+[17-May-2020 15:00:38 UTC] Warning: base64_decode() expects parameter 1 to be string, array given
+[17-May-2020 15:01:18 UTC] Notice: Undefined offset: 1
+[17-May-2020 15:03:57 UTC] Notice: Undefined offset: 1
+[17-May-2020 15:05:16 UTC] Notice: Undefined offset: 1
+[20-May-2020 06:58:54 UTC] An exception occurred while executing 'INSERT INTO Category (name, description, catCode, regDate, regEtDate, picturePath, branch, status, registeredBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)' with params ["Pasta", "pasta", "3457", "2020-05-20", "12\/09\/2012", "http:\/\/asbeza.appdevt.com\/public\/uploads\/categories\/800a83ec81f71b292ede8e2b4e0b424f.png", "1", "1", "1"]:
+
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Pasta-1' for key 'name'

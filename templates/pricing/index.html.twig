@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pricing index{% endblock %}
+
+{% block body %}
+    <h1>Pricing index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>ItemCode</th>
+                <th>InPrice</th>
+                <th>FixPrice</th>
+                <th>InQuantity</th>
+                <th>RemainingQuantity</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pricing in pricings %}
+            <tr>
+                <td>{{ pricing.id }}</td>
+                <td>{{ pricing.itemCode }}</td>
+                <td>{{ pricing.inPrice }}</td>
+                <td>{{ pricing.fixPrice }}</td>
+                <td>{{ pricing.inQuantity }}</td>
+                <td>{{ pricing.remainingQuantity }}</td>
+                <td>{{ pricing.date }}</td>
+                <td>
+                    <a href="{{ path('pricing_show', {'id': pricing.id}) }}">show</a>
+                    <a href="{{ path('pricing_edit', {'id': pricing.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pricing_new') }}">Create new</a>
+{% endblock %}

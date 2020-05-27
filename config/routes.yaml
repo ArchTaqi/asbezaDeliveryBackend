@@ -1,0 +1,6 @@
+# config/routes.yaml
+app.swagger_ui:
+  path: /rest/apidoc
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+

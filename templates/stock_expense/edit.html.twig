@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit StockExpense{% endblock %}
+
+{% block body %}
+    <h1>Edit StockExpense</h1>
+
+    {{ include('stock_expense/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('stock_expense_index') }}">back to list</a>
+
+    {{ include('stock_expense/_delete_form.html.twig') }}
+{% endblock %}

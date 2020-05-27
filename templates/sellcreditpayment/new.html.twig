@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Sellcreditpayment{% endblock %}
+
+{% block body %}
+    <h1>Create new Sellcreditpayment</h1>
+
+    {{ include('sellcreditpayment/_form.html.twig') }}
+
+    <a href="{{ path('sellcreditpayment_index') }}">back to list</a>
+{% endblock %}

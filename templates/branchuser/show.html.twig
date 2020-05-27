@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Branchuser{% endblock %}
+
+{% block body %}
+    <h1>Branchuser</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ branchuser.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('branchuser_index') }}">back to list</a>
+
+    <a href="{{ path('branchuser_edit', {'id': branchuser.id}) }}">edit</a>
+
+    {{ include('branchuser/_delete_form.html.twig') }}
+{% endblock %}

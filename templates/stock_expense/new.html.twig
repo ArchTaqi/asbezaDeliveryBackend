@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New StockExpense{% endblock %}
+
+{% block body %}
+    <h1>Create new StockExpense</h1>
+
+    {{ include('stock_expense/_form.html.twig') }}
+
+    <a href="{{ path('stock_expense_index') }}">back to list</a>
+{% endblock %}

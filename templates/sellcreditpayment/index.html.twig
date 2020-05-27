@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sellcreditpayment index{% endblock %}
+
+{% block body %}
+    <h1>Sellcreditpayment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TotalAmount</th>
+                <th>Regdate</th>
+                <th>Regetdate</th>
+                <th>OrderTime</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sellcreditpayment in sellcreditpayments %}
+            <tr>
+                <td>{{ sellcreditpayment.id }}</td>
+                <td>{{ sellcreditpayment.totalAmount }}</td>
+                <td>{{ sellcreditpayment.regdate ? sellcreditpayment.regdate|date('Y-m-d') : '' }}</td>
+                <td>{{ sellcreditpayment.regetdate }}</td>
+                <td>{{ sellcreditpayment.orderTime ? sellcreditpayment.orderTime|date('H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('sellcreditpayment_show', {'id': sellcreditpayment.id}) }}">show</a>
+                    <a href="{{ path('sellcreditpayment_edit', {'id': sellcreditpayment.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('sellcreditpayment_new') }}">Create new</a>
+{% endblock %}

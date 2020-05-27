@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sellcredit index{% endblock %}
+
+{% block body %}
+    <h1>Sellcredit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TotalAmount</th>
+                <th>PaidAmount</th>
+                <th>RemainingAmount</th>
+                <th>CustomerName</th>
+                <th>CustomerPhone</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sellcredit in sellcredits %}
+            <tr>
+                <td>{{ sellcredit.id }}</td>
+                <td>{{ sellcredit.totalAmount }}</td>
+                <td>{{ sellcredit.paidAmount }}</td>
+                <td>{{ sellcredit.remainingAmount }}</td>
+                <td>{{ sellcredit.customerName }}</td>
+                <td>{{ sellcredit.customerPhone }}</td>
+                <td>{{ sellcredit.date }}</td>
+                <td>
+                    <a href="{{ path('sellcredit_show', {'id': sellcredit.id}) }}">show</a>
+                    <a href="{{ path('sellcredit_edit', {'id': sellcredit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('sellcredit_new') }}">Create new</a>
+{% endblock %}

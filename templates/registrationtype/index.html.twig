@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registrationtype index{% endblock %}
+
+{% block body %}
+    <h1>Registrationtype index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for registrationtype in registrationtypes %}
+            <tr>
+                <td>{{ registrationtype.id }}</td>
+                <td>{{ registrationtype.name }}</td>
+                <td>{{ registrationtype.description }}</td>
+                <td>
+                    <a href="{{ path('registrationtype_show', {'id': registrationtype.id}) }}">show</a>
+                    <a href="{{ path('registrationtype_edit', {'id': registrationtype.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('registrationtype_new') }}">Create new</a>
+{% endblock %}

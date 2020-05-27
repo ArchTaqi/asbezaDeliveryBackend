@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sellcreditpayment{% endblock %}
+
+{% block body %}
+    <h1>Sellcreditpayment</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sellcreditpayment.id }}</td>
+            </tr>
+            <tr>
+                <th>TotalAmount</th>
+                <td>{{ sellcreditpayment.totalAmount }}</td>
+            </tr>
+            <tr>
+                <th>Regdate</th>
+                <td>{{ sellcreditpayment.regdate ? sellcreditpayment.regdate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Regetdate</th>
+                <td>{{ sellcreditpayment.regetdate }}</td>
+            </tr>
+            <tr>
+                <th>OrderTime</th>
+                <td>{{ sellcreditpayment.orderTime ? sellcreditpayment.orderTime|date('H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sellcreditpayment_index') }}">back to list</a>
+
+    <a href="{{ path('sellcreditpayment_edit', {'id': sellcreditpayment.id}) }}">edit</a>
+
+    {{ include('sellcreditpayment/_delete_form.html.twig') }}
+{% endblock %}

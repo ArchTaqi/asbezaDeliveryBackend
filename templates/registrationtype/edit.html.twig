@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Registrationtype{% endblock %}
+
+{% block body %}
+    <h1>Edit Registrationtype</h1>
+
+    {{ include('registrationtype/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('registrationtype_index') }}">back to list</a>
+
+    {{ include('registrationtype/_delete_form.html.twig') }}
+{% endblock %}

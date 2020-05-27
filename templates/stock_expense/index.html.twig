@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}StockExpense index{% endblock %}
+
+{% block body %}
+    <h1>StockExpense index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Expence</th>
+                <th>Reason</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stock_expense in stock_expenses %}
+            <tr>
+                <td>{{ stock_expense.id }}</td>
+                <td>{{ stock_expense.expence }}</td>
+                <td>{{ stock_expense.reason }}</td>
+                <td>{{ stock_expense.date }}</td>
+                <td>
+                    <a href="{{ path('stock_expense_show', {'id': stock_expense.id}) }}">show</a>
+                    <a href="{{ path('stock_expense_edit', {'id': stock_expense.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('stock_expense_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Itemcredit{% endblock %}
+
+{% block body %}
+    <h1>Itemcredit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ itemcredit.id }}</td>
+            </tr>
+            <tr>
+                <th>TotalAmount</th>
+                <td>{{ itemcredit.totalAmount }}</td>
+            </tr>
+            <tr>
+                <th>PaidAmount</th>
+                <td>{{ itemcredit.paidAmount }}</td>
+            </tr>
+            <tr>
+                <th>RemainigAmount</th>
+                <td>{{ itemcredit.remainigAmount }}</td>
+            </tr>
+            <tr>
+                <th>OwnerName</th>
+                <td>{{ itemcredit.ownerName }}</td>
+            </tr>
+            <tr>
+                <th>OwnerPhone</th>
+                <td>{{ itemcredit.ownerPhone }}</td>
+            </tr>
+            <tr>
+                <th>Paymentdate</th>
+                <td>{{ itemcredit.paymentdate }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('itemcredit_index') }}">back to list</a>
+
+    <a href="{{ path('itemcredit_edit', {'id': itemcredit.id}) }}">edit</a>
+
+    {{ include('itemcredit/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Itemcredit index{% endblock %}
+
+{% block body %}
+    <h1>Itemcredit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TotalAmount</th>
+                <th>PaidAmount</th>
+                <th>RemainigAmount</th>
+                <th>OwnerName</th>
+                <th>OwnerPhone</th>
+                <th>Paymentdate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for itemcredit in itemcredits %}
+            <tr>
+                <td>{{ itemcredit.id }}</td>
+                <td>{{ itemcredit.totalAmount }}</td>
+                <td>{{ itemcredit.paidAmount }}</td>
+                <td>{{ itemcredit.remainigAmount }}</td>
+                <td>{{ itemcredit.ownerName }}</td>
+                <td>{{ itemcredit.ownerPhone }}</td>
+                <td>{{ itemcredit.paymentdate }}</td>
+                <td>
+                    <a href="{{ path('itemcredit_show', {'id': itemcredit.id}) }}">show</a>
+                    <a href="{{ path('itemcredit_edit', {'id': itemcredit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('itemcredit_new') }}">Create new</a>
+{% endblock %}

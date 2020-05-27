@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Sellcreditpayment{% endblock %}
+
+{% block body %}
+    <h1>Edit Sellcreditpayment</h1>
+
+    {{ include('sellcreditpayment/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('sellcreditpayment_index') }}">back to list</a>
+
+    {{ include('sellcreditpayment/_delete_form.html.twig') }}
+{% endblock %}
